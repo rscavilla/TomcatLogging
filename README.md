@@ -1,7 +1,7 @@
-Tomcat Multiport Logging using Log4j2
+## Tomcat Multiport Logging using Log4j2
 This repo demonstrates how to have Tomcat running on multiple ports on the same server and record log events in separate log files for each port. 
 To get this sample code to run:
-1.	Update CATALINA_HOME/conf/server.xml
+1.	Update **CATALINA_HOME/conf/server.xml**
 2.	Enter the log file directory in line 4 of the log4j2.xml file
 3.	Build the project and load onto the tomcat server
 4.	Call the endpoint: http://yourhost:8080/TomcatLogging/app/service/ping
@@ -35,3 +35,8 @@ In the log4j2.xml file, use $${ctx:tcport} to get the port number. The following
 
 ```<Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss} ${hostName}:$${ctx:tcport} %-5p	%c{1}:%L %m%n</Property>```
 
+```-rw-r----- 1 o b     103 Dec 16 11:43 TomcatLogging-4545.log
+-rw-r----- 1 o b     103 Dec 16 11:43 TomcatLogging-4546.log
+-rw-r----- 1 o b      78 Dec 16 11:43 TomcatLogging-App.log
+-rw-r----- 1 o b     284 Dec 16 11:43 TomcatLogging.log
+```
