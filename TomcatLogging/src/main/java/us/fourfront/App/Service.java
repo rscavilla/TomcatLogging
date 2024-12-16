@@ -31,6 +31,10 @@ public class Service {
 		 * This port will be sued for routing during the logging process 
 		 */
 		if (portNumber.find()) {
+			/*
+			 * Store the port number in tcport
+			 * used to identify and name the log file 
+			 */
 			ThreadContext.put("tcport", portNumber.group(1));
 			this.pn=portNumber.group(1);
 		} else {
