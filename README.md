@@ -1,5 +1,5 @@
 ## Tomcat Multiport Logging using Log4j2
-This repo demonstrates how to have Tomcat running on multiple ports on the same server and record log events in separate log files for each port. 
+This repo demonstrates how to have Tomcat running on multiple ports on the same server and record log events in separate log files for each port.
 To get this sample code to run:
 1.	Update **CATALINA_HOME/conf/server.xml**
 2.	Enter the log file directory in line 4 of the log4j2.xml file
@@ -9,13 +9,10 @@ To get this sample code to run:
    
 NOTES:
 
-•	This configuration will create a {hostname} subdirectory in the log file directory
-
-•	There will be one file named TomcatLogging-App.log where applicatgion events will be logged
-
-•	There will be a combined log file for all events: TomcatLogging.log
-
-•	There will be a log containing the port number file for each port the endpoint was called on: TomcatLogging-4545.log
+* This configuration will create a {hostname} subdirectory in the log file directory
+* There will be one file named TomcatLogging-App.log where applicatgion events will be logged
+* There will be a combined log file for all events: TomcatLogging.log
+* There will be a log containing the port number file for each port the endpoint was called on: TomcatLogging-4545.log
 
 Within the JAX-RS runtime, there is one main thread for the application class derived from ResourceConfig. In this code, that class is the App.class. Each port declared in the server.xml file creates a unique thread for the service class. Each thread name contains the port number: http-nio-4545-exec-3. Here, the request came in on port 4545. The port is parsed from the thread name and used for routing during the logging process and for naming the log files.
 
