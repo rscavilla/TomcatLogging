@@ -17,6 +17,9 @@ public class App extends ResourceConfig {
 	
 	public App() {
 		
+		/*
+		 * The value stored in tcport will be used in log4j2.xml to name the log file
+		 */
 		ThreadContext.put("tcport", "App");
 		
 		try {
