@@ -19,6 +19,7 @@ NOTES:
 
 Within the JAX-RS runtime, there is one main thread for the application class derived from ResourceConfig. In this code, that class is the App.class. Each port declared in the server.xml file creates a unique thread for the service class. Each thread name contains the port number: http-nio-4545-exec-3. Here, the request came in on port 4545. The port is parsed from the thread name and used for routing during the logging process and for naming the log files.
 
+### CATALINA_HOME/conf/server.xml ###
     <Connector port="4545" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443"
@@ -35,6 +36,7 @@ In the log4j2.xml file, use $${ctx:tcport} to get the port number. The following
 
 ```<Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss} ${hostName}:$${ctx:tcport} %-5p	%c{1}:%L %m%n</Property>```
 
+### Directory Sample ###
 ```-rw-r----- 1 o b     103 Dec 16 11:43 TomcatLogging-4545.log
 -rw-r----- 1 o b     103 Dec 16 11:43 TomcatLogging-4546.log
 -rw-r----- 1 o b      78 Dec 16 11:43 TomcatLogging-App.log
