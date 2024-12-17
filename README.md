@@ -4,8 +4,9 @@ To get this sample code to run:
 1.	Update **CATALINA_HOME/conf/server.xml**
 2.	Enter the log file directory in line 4 of the log4j2.xml file
 3.	Build the project and load onto the tomcat server
-4.	Call the endpoint: http://yourhost:8080/TomcatLogging/app/service/ping
-5.	Check the log files
+4.	Call the endpoint: http://yourhost:**4545**/TomcatLogging/app/service/ping (change port as necessary)
+5.	Call the endpoint: http://yourhost:**4546**/TomcatLogging/app/service/ping
+6.	Check the log files
    
 NOTES:
 
